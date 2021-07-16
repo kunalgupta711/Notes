@@ -1,16 +1,24 @@
 <div #container class="note-card-container">
 <a [routerLink]="link">
     <div class="note-card-content">
+        
         <h1 class="note-card-title">
           {{title}}
+          
         </h1>
+        <br>
         <p #g></p>
         <div #bodyText  class="note-card-body">
-        {{body}}
+        {{body}} 
             <div #truncator class="fade-out-truncation">
+                
 
             </div>
+            <br>
+            
         </div>
+        <br>
+        <div style="font-size: xx-small; color: grey;">Updated On:</div><p style="font-size: x-small; color: black;">{{dateUpdated | date:'medium'}}</p>
 
     </div>
 </a>
