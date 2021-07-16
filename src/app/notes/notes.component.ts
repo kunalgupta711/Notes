@@ -12,6 +12,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class NotesComponent implements OnInit {
   note!: Note;
   noteId!: number;
+  dateCreated!: Date;
+  dateUpdated!: Date;
+
   new=true;
   constructor(private notesService: NotesService, private router: Router, private route:ActivatedRoute) { }
 
