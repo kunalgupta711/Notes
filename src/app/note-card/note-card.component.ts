@@ -10,6 +10,8 @@ export class NoteCardComponent implements AfterViewInit {
   @Input() title!: string;
   @Input() body!: string;
   @Input() link!:string;
+  @Input() dateCreated!: Date;
+  @Input() dateUpdated!: Date;
 
   @Output('delete') deleteEvent: EventEmitter<void>= new EventEmitter<void>();
 
