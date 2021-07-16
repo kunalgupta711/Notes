@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Note } from './notes.model';
 import { not } from '@angular/compiler/src/output/output_ast';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,13 +22,17 @@ export class NotesService {
   }
   add(note: Note){
     let newLength = this.notes.push(note);
+
     let index = newLength - 1;
+    note.dateCreated = new Date();
+    note.dateUpdated= new Date();
     return index;
   }
   update(id: number, title: string, body: string){
     let note =this.notes[id];
     note.title =title;
     note.body= body;
+    note.dateUpdated= new Date();
   }
   delete(id: number){
     this.notes.splice(id,1);
